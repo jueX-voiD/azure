@@ -12,9 +12,27 @@
   --color-line-soft: #eceff3;
   --font-sans: var(--font-petala), system-ui, sans-serif;
 
-  /* Elementor breakpoints: mobile < 768, tablet < 1025 */
+  /* Elementor breakpoints: mobile <= 767, tablet 768-1024, desktop >= 1025 */
   --breakpoint-md: 768px;
   --breakpoint-lg: 1025px;
+}
+
+/* Elementor fluid typography, copied from the live site's kit (max sizes 64/40/32/24/18/16px). */
+@theme {
+  --text-fluid-hero: clamp(1.5rem, 0.4773rem + 4.5455vw, 4rem);
+  --text-fluid-hero--line-height: 1.25;
+  --text-fluid-display: clamp(2rem, 1.1818rem + 3.6364vw, 4rem);
+  --text-fluid-display--line-height: 1.25;
+  --text-fluid-h2: clamp(1.5rem, 1.0909rem + 1.8182vw, 2.5rem);
+  --text-fluid-h2--line-height: 1.25;
+  --text-fluid-h3: clamp(1.25rem, 0.9432rem + 1.3636vw, 2rem);
+  --text-fluid-h3--line-height: 1.25;
+  --text-fluid-body: clamp(1.125rem, 0.9716rem + 0.6818vw, 1.5rem);
+  --text-fluid-body--line-height: 1.6;
+  --text-fluid-small: clamp(1rem, 0.9489rem + 0.2273vw, 1.125rem);
+  --text-fluid-small--line-height: 1.6;
+  --text-fluid-field: clamp(0.875rem, 0.8239rem + 0.2273vw, 1rem);
+  --text-fluid-field--line-height: 1.6;
 }
 
 html.lenis,

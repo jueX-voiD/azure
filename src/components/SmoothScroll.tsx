@@ -8,7 +8,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // Same settings as the WordPress site: lerp 0.1, wheelMultiplier 1.
-export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+export default function SmoothScroll({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.1, wheelMultiplier: 1, infinite: false });
     lenis.on("scroll", ScrollTrigger.update);
