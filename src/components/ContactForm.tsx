@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { PROJECT_OPTIONS, ROLE_OPTIONS } from "@/lib/site";
 
 const base =
@@ -49,6 +50,7 @@ function Select({ name, options }: { name: string; options: string[] }) {
 }
 
 export default function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -64,6 +66,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error();
       form.reset();
       setStatus("sent");
+      router.push("/thank-you");
     } catch {
       setStatus("error");
     }
@@ -118,7 +121,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="text-fluid-small w-full rounded-full border border-marine bg-marine py-3 font-light text-white shadow-[0_1px_3px_rgba(13,13,18,0.05),0_1px_2px_rgba(13,13,18,0.04)] transition-opacity hover:opacity-90 disabled:opacity-60"
+        className="text-fluid-small w-full rounded-full border border-marine bg-marine py-3 font-light text-white shadow-[0_1px_3px_rgba(13,13,18,0.05),0_1px_2px_rgba(13,13,18,0.04)] transition-colors hover:bg-white hover:text-marine disabled:opacity-60"
       >
         {status === "sending" ? "Sending..." : "Send message"}
       </button>

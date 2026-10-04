@@ -1,4 +1,4 @@
-import ContactForm from "./ContactForm";
+import ContactCard from "./ContactCard";
 
 export default function ContactSection() {
   return (
@@ -12,11 +12,7 @@ export default function ContactSection() {
             step of the way.
           </p>
         </div>
-
-        <div className="flex flex-col gap-6 rounded-2xl border border-line-soft bg-white p-3 md:p-4 lg:w-[600px] lg:p-8">
-          <h2 className="text-fluid-h3 font-normal text-ink">Contact Us</h2>
-          <ContactForm />
-        </div>
+        <ContactCard />
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export function ArrowRightIcon({ className }: { className?: string }) {
   );
 }
 
-export function HamburgerIcon() {
+export function HamburgerIcon({ stroke = "white" }: { stroke?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,21 +29,21 @@ export function HamburgerIcon() {
     >
       <path
         d="M11.3828 21H22.7578"
-        stroke="white"
+        stroke={stroke}
         strokeWidth="1.41509"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M7.875 14H22.75"
-        stroke="white"
+        stroke={stroke}
         strokeWidth="1.41509"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M4.375 7H22.75"
-        stroke="white"
+        stroke={stroke}
         strokeWidth="1.41509"
         strokeLinecap="round"
         strokeLinejoin="round"

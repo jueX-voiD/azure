@@ -14,7 +14,7 @@ const petala = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Azure Properties",
+  title: { default: "Home - Azure", template: "%s" },
   description: "Envisioning tomorrow, building today.",
 };
 

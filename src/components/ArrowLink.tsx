@@ -12,11 +12,13 @@ export default function ArrowLink({
   className?: string;
 }) {
   return (
-    <Link href={href} className={`flex items-center gap-4 ${className}`}>
+    <Link href={href} className={`group flex items-center gap-4 ${className}`}>
       <span className="flex shrink-0 items-center justify-center rounded-[4px] bg-sand p-[9px] md:p-3">
-        <ArrowRightIcon className="size-[clamp(1rem,0.7955rem+0.9091vw,1.5rem)]" />
+        <ArrowRightIcon className="size-[clamp(1rem,0.7955rem+0.9091vw,1.5rem)] transition-transform duration-[400ms] ease-[ease] group-hover:-rotate-45" />
       </span>
-      <span className="text-fluid-body font-light text-marine">{children}</span>
+      <span className="text-fluid-body font-light text-marine group-hover:font-normal">
+        {children}
+      </span>
     </Link>
   );
 }

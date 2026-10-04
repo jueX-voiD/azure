@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 
-const REQUIRED = ["firstName", "lastName", "phone", "email", "project", "role"] as const;
+const REQUIRED = [
+  "firstName",
+  "lastName",
+  "phone",
+  "email",
+  "project",
+  "role",
+] as const;
 
 export async function POST(request: Request) {
   let data: Record<string, unknown>;
