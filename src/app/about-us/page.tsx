@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import ArrowLink from "@/components/ArrowLink";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 
 export const metadata: Metadata = { title: "About Us - Azure" };
 
@@ -55,7 +53,6 @@ const STATS = [
 export default function AboutPage() {
   return (
     <>
-      <Header variant="light" />
       <main>
         {/* Intro */}
         <section className="px-5 pt-[60px] pb-[96px]">
@@ -231,7 +228,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

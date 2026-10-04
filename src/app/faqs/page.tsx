@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import FaqAccordion from "@/components/FaqAccordion";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { FAQS } from "@/lib/faqs";
 
 export const metadata: Metadata = { title: "FAQs - Azure" };
@@ -10,7 +8,6 @@ export const metadata: Metadata = { title: "FAQs - Azure" };
 export default function FaqsPage() {
   return (
     <>
-      <Header variant="light" />
       <main>
         <div className="mx-auto max-w-[1240px]">
           <Image
@@ -67,7 +64,6 @@ export default function FaqsPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

@@ -3,8 +3,6 @@ import Image from "next/image";
 import AmenityList from "@/components/AmenityList";
 import ArrowLink from "@/components/ArrowLink";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import ProjectGallery from "@/components/ProjectGallery";
 import ProjectTabs from "@/components/ProjectTabs";
 import { COMMERCIAL, RESIDENTIAL, VILLAS } from "@/lib/projects";
@@ -17,7 +15,6 @@ const subtitle =
 export default function ProjectsPage() {
   return (
     <>
-      <Header variant="light" />
       <main>
         {/* Intro */}
         <section className="px-5 py-12">
@@ -146,7 +143,6 @@ export default function ProjectsPage() {
 
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }

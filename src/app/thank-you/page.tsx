@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import ArrowLink from "@/components/ArrowLink";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 
 export const metadata: Metadata = { title: "Thank You - Azure" };
 
 export default function ThankYouPage() {
   return (
-    <div className="bg-[#EBF4F5]">
-      <Header variant="light" />
+    <>
       <main>
         <section className="min-h-[600px] px-5 pt-[86px] pb-[116px]">
           <div className="mx-auto flex max-w-[1240px] flex-col gap-10 md:flex-row md:justify-between md:gap-5">
@@ -38,7 +35,6 @@ export default function ThankYouPage() {
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+    </>
   );
 }

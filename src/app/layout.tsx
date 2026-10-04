@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import PageShell from "@/components/PageShell";
 import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
@@ -22,7 +23,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${petala.variable} antialiased`}>
       <body>
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <PageShell>{children}</PageShell>
+        </SmoothScroll>
       </body>
     </html>
   );

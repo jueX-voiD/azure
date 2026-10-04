@@ -17,62 +17,6 @@ export function ArrowRightIcon({ className }: { className?: string }) {
   );
 }
 
-export function HamburgerIcon({ stroke = "white" }: { stroke?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
-      viewBox="0 0 28 28"
-      fill="none"
-      aria-hidden
-    >
-      <path
-        d="M11.3828 21H22.7578"
-        stroke={stroke}
-        strokeWidth="1.41509"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M7.875 14H22.75"
-        stroke={stroke}
-        strokeWidth="1.41509"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M4.375 7H22.75"
-        stroke={stroke}
-        strokeWidth="1.41509"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-export function CloseIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="36"
-      height="36"
-      viewBox="0 0 36 36"
-      fill="none"
-      aria-hidden
-    >
-      <path
-        d="M7.5 28.5L18 18M18 18L28.5 7.5M18 18L7.5 7.5M18 18L28.5 28.5"
-        stroke="#fff"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function InstagramIcon() {
   return (
     <svg

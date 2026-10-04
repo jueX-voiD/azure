@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import ContactCard from "@/components/ContactCard";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 
 export const metadata: Metadata = { title: "Contact Us - Azure" };
 
@@ -11,7 +9,6 @@ const info =
 export default function ContactPage() {
   return (
     <>
-      <Header variant="light" />
       <main>
         <section className="px-5 py-8 md:py-[60px]">
           <div className="mx-auto flex max-w-[1240px] flex-col gap-10 lg:flex-row lg:justify-between lg:gap-5">
@@ -50,7 +47,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

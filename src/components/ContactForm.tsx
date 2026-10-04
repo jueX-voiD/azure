@@ -66,7 +66,14 @@ export default function ContactForm() {
       if (!res.ok) throw new Error();
       form.reset();
       setStatus("sent");
-      router.push("/thank-you");
+      // Goes through the page-transition curtain when it is active (event is cancelled when handled).
+      const handled = !window.dispatchEvent(
+        new CustomEvent("azure:navigate", {
+          detail: "/thank-you",
+          cancelable: true,
+        }),
+      );
+      if (!handled) router.push("/thank-you");
     } catch {
       setStatus("error");
     }
