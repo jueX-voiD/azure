@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import type { Project } from "@/lib/projects";
+import type { GalleryImage } from "@/lib/types";
 
 const chevron = {
   prev: "M8.293 12.707a1 1 0 0 1 0-1.414l5.657-5.657a1 1 0 1 1 1.414 1.414L10.414 12l4.95 4.95a1 1 0 0 1-1.414 1.414l-5.657-5.657Z",
@@ -41,7 +41,7 @@ export default function ProjectGallery({
   imageClassName = "",
   priority = false,
 }: {
-  images: Project["images"];
+  images: GalleryImage[];
   imageClassName?: string;
   priority?: boolean;
 }) {
@@ -93,7 +93,7 @@ export default function ProjectGallery({
           >
             <Image
               src={img.src}
-              alt=""
+              alt={img.alt ?? ""}
               width={img.w}
               height={img.h}
               sizes="(min-width: 1025px) 736px, 100vw"

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import PageShell from "@/components/PageShell";
-import SmoothScroll from "@/components/SmoothScroll";
 import "./globals.css";
 
 const petala = localFont({
@@ -19,14 +17,15 @@ export const metadata: Metadata = {
   description: "Envisioning tomorrow, building today.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+// The public site and the Sanity Studio have their own layouts: see (site)/layout.tsx and (studio)/.
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${petala.variable} antialiased`}>
-      <body>
-        <SmoothScroll>
-          <PageShell>{children}</PageShell>
-        </SmoothScroll>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import AmenityList from "./AmenityList";
 import ProjectGallery from "./ProjectGallery";
-import type { Project } from "@/lib/projects";
+import type { Project } from "@/lib/types";
 
 // Residential projects: a tab list (vertical on desktop, a horizontal scroller up to 1024px) and a detail card.
 export default function ProjectTabs({ projects }: { projects: Project[] }) {
@@ -39,7 +39,7 @@ export default function ProjectTabs({ projects }: { projects: Project[] }) {
           const selected = i === active;
           return (
             <button
-              key={p.title}
+              key={p.id}
               ref={(el) => {
                 tabRefs.current[i] = el;
               }}

@@ -1,5 +1,5 @@
 // Generated from the live site content.
-export type Project = {
+export type RawProject = {
   title: string;
   subtitle: string;
   status?: string | null;
@@ -8,7 +8,7 @@ export type Project = {
   body: string[];
 };
 
-export const RESIDENTIAL: Project[] = [
+export const RESIDENTIAL: RawProject[] = [
   {
     title: "AI Barsha Tower A",
     subtitle: "Connecting modern living with prime convenience",
@@ -186,7 +186,7 @@ export const RESIDENTIAL: Project[] = [
   },
 ];
 
-export const VILLAS: Project[] = [
+export const VILLAS: RawProject[] = [
   {
     title: "Dubai Water Canal Villa",
     subtitle: "Exclusive waterfront living at its finest",
@@ -256,21 +256,21 @@ export const VILLAS: Project[] = [
   },
 ];
 
-export const COMMERCIAL: Project = {
+export const COMMERCIAL: RawProject = {
   title:
-    "Relive Lamcy ’s warmth with a modern touch—old friends, new experiences",
+    "The Plaza Mall warmth with a modern touch, old friends, new experiences",
   subtitle: "A new retail and entertainment destination",
   images: [
     {
-      src: "/images/projects/d5c649bb7783e4dd43bb9b03b4a45f70503dea4a.webp",
-      w: 2304,
-      h: 1440,
+      src: "/images/projects/002a-1.jpg",
+      w: 1574,
+      h: 999,
     },
   ],
   amenities: [],
   body: [
     "Located in the bustling Oud Metha area, this newly acquired mall is set to bring a fresh mix of shopping, dining, and leisure experiences to one of Dubai’s most central districts. Positioned along Sheikh Zayed Road, it offers visitors easy access and a vibrant urban setting.",
     "Spanning five floors of retail, the mall will host a wide range of stores designed to meet the daily needs and lifestyle choices of the community. Adding to its appeal, an exclusive cinema area will provide an entertainment hub for residents and visitors alike.",
-    "With its central location and diverse offerings, Oud Metha Mall is positioned to become a go-to destination for shopping and leisure in Dubai.",
+    "With its central location and diverse offerings, The Plaza Mall is positioned to become a go-to destination for shopping and leisure in Dubai.",
   ],
 };

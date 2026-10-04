@@ -1,12 +1,14 @@
 // Hosted on the WordPress site for now (57 MB); compress and move it to a CDN before launch.
-export const HERO_VIDEO_SRC = "https://azureproperties.ae/wp-content/uploads/2025/11/Video-Option-1.mp4";
+export const HERO_VIDEO_SRC =
+  "https://azureproperties.ae/wp-content/uploads/2025/11/Video-Option-1.mp4";
 export const HERO_VIDEO_POSTER = "/images/video-poster.webp";
 
 export const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26368.983151112752!2d55.213080147224225!3d25.168142265499515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69b1a91067bb%3A0x3e59eb92cdc5e20d!2sAl%20Ferdous%204%20(%20Dubai%20Real%20Estate%20Centre)!5e0!3m2!1sen!2snp!4v1764039207627!5m2!1sen!2snp";
 
 export const SOCIALS = {
-  instagram: "https://www.instagram.com/azure.properties?utm_source=qr&igsh=MWYweTh1NjQ3ZDVtOA==",
+  instagram:
+    "https://www.instagram.com/azure.properties?utm_source=qr&igsh=MWYweTh1NjQ3ZDVtOA==",
   linkedin: "https://www.linkedin.com/company/azure-properties-ae/",
 };
 
@@ -86,4 +88,10 @@ export const PROJECT_OPTIONS = [
   "Lamcy by Azure",
 ];
 
-export const ROLE_OPTIONS = ["Agent", "Vendor", "Purchaser", "Interested to rent", "Other, specify"];
+export const ROLE_OPTIONS = [
+  "Agent",
+  "Vendor",
+  "Purchaser",
+  "Interested to rent",
+  "Other, specify",
+];
