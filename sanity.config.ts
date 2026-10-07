@@ -1,9 +1,9 @@
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { visionTool } from "@sanity/vision";
 import { presentationTool, defineLocations } from "sanity/presentation";
-import { apiVersion, dataset, projectId } from "./src/sanity/env";
+import { dataset, projectId } from "./src/sanity/env";
 import { schemaTypes, singletonTypes } from "./src/sanity/schemaTypes";
+import { CATEGORIES } from "./src/sanity/schemaTypes/building";
 import { structure } from "./src/sanity/structure";
 
 export default defineConfig({
@@ -19,24 +19,12 @@ export default defineConfig({
       ...templates.filter(
         ({ schemaType }) => !singletonTypes.includes(schemaType),
       ),
-      {
-        id: "building-residential",
-        title: "Residential building",
+      ...CATEGORIES.map((c) => ({
+        id: `building-${c.value}`,
+        title: `${c.title}${c.value === "villa" ? "" : " building"}`,
         schemaType: "building",
-        value: { category: "residential" },
-      },
-      {
-        id: "building-villa",
-        title: "Villa",
-        schemaType: "building",
-        value: { category: "villa" },
-      },
-      {
-        id: "building-commercial",
-        title: "Commercial building",
-        schemaType: "building",
-        value: { category: "commercial" },
-      },
+        value: { category: c.value },
+      })),
     ],
   },
   document: {
@@ -69,6 +57,5 @@ export default defineConfig({
         },
       },
     }),
-    visionTool({ defaultApiVersion: apiVersion }),
   ],
 });

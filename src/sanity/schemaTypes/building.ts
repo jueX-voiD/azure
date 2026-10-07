@@ -6,10 +6,14 @@ import {
 import { AmenityPicker } from "../components/AmenityPicker";
 
 export const CATEGORIES = [
-  { title: "Residential", value: "residential" },
-  { title: "Villa", value: "villa" },
-  { title: "Commercial", value: "commercial" },
-];
+  {
+    title: "Residential",
+    value: "residential",
+    listTitle: "Residential buildings",
+  },
+  { title: "Villa", value: "villa", listTitle: "Villas" },
+  { title: "Commercial", value: "commercial", listTitle: "Commercial" },
+] as const;
 
 // One building on the Projects page. Category decides which section it appears in.
 export const building = defineType({
@@ -25,7 +29,11 @@ export const building = defineType({
       type: "string",
       description:
         "Residential: tabs. Villa: cards. Commercial: large feature block.",
-      options: { list: CATEGORIES, layout: "radio", direction: "horizontal" },
+      options: {
+        list: CATEGORIES.map(({ title, value }) => ({ title, value })),
+        layout: "radio",
+        direction: "horizontal",
+      },
       validation: (rule) => rule.required(),
     }),
     defineField({

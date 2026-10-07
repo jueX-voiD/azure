@@ -23,7 +23,7 @@ export const PROJECTS_QUERY = defineQuery(`{
       "h": asset->metadata.dimensions.height,
       alt
     },
-    "amenities": amenities[]->{ name, orderRank, "icon": icon.asset->url }
+    "amenities": amenities[defined(@->icon.asset)]->{ name, "icon": icon.asset->url }
   }
 }`);
 

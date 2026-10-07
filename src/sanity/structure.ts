@@ -1,27 +1,6 @@
 import type { StructureResolver } from "sanity/structure";
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
-import { icons } from "@sanity/icons";
-
-const lists = [
-  {
-    id: "residential",
-    title: "Residential buildings",
-    category: "residential",
-    template: "building-residential",
-  },
-  {
-    id: "villa",
-    title: "Villas",
-    category: "villa",
-    template: "building-villa",
-  },
-  {
-    id: "commercial",
-    title: "Commercial",
-    category: "commercial",
-    template: "building-commercial",
-  },
-] as const;
+import { CATEGORIES } from "./schemaTypes/building";
 
 export const structure: StructureResolver = (S, context) =>
   S.list()
@@ -33,21 +12,23 @@ export const structure: StructureResolver = (S, context) =>
           S.list()
             .title("Projects")
             .items([
-              ...lists.map((l) =>
+              ...CATEGORIES.map((c) =>
                 orderableDocumentListDeskItem({
                   type: "building",
-                  id: l.id,
-                  title: l.title,
-                  filter: `_type == "building" && category == "${l.category}"`,
+                  id: c.value,
+                  title: c.listTitle,
+                  filter: `_type == "building" && category == "${c.value}"`,
                   // Drag rows to reorder; the "+" starts a new building with the category already set.
                   createIntent: false,
                   menuItems: [
                     S.menuItem()
-                      .title(`Add ${l.title.toLowerCase()}`)
-                      .icon(icons.add)
+                      .title(`Add ${c.listTitle.toLowerCase()}`)
                       .intent({
                         type: "create",
-                        params: { type: "building", template: l.template },
+                        params: {
+                          type: "building",
+                          template: `building-${c.value}`,
+                        },
                       })
                       .showAsAction()
                       .serialize(),
